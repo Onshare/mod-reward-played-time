@@ -24,11 +24,16 @@ public:
             if (RewardTimer > 0)
             {
                 uint8 level = player->getLevel();
-                if (level < 70) {
+                if (level < 70) 
+                {
+                    RewardTimer = initialTimer;
                     return ;
                 }
                 if (player->isAFK())
+                {
+                    RewardTimer = initialTimer;
                     return;
+                }
 
                 if (RewardTimer <= p_time)
                 {
